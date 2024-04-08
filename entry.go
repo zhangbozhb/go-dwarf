@@ -14,6 +14,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+	"slices"
 	"strconv"
 )
 
@@ -1135,6 +1136,62 @@ func (d *Data) FilesForEntry(e *Entry) ([]*LineFile, error) {
 	}
 
 	return lr.Files(), nil
+}
+
+func (d *Data) BuildCompileUnit(r *Reader) {
+	if len(d.cunits) == 0 {
+		if r == nil {
+			r = d.Reader()
+		}
+		var cunits []Offset
+		for e, _ := r.Next(); e != nil; e, _ = r.Next() {
+			if e.Tag == TagCompileUnit {
+				cunits = append(cunits, e.Offset)
+			}
+		}
+		slices.Sort(cunits)
+		d.cunits = cunits
+	}
+}
+
+func (d *Data) cuOffsetForOffset(offset Offset, r *Reader) Offset {
+	d.BuildCompileUnit(r)
+	// 二分查找
+	cunits := d.cunits
+	var cuOffset Offset
+	count := len(cunits)
+	start, end := 0, count-1
+	for start <= end {
+		tmp := (start + end) / 2
+		if cunits[tmp] <= offset {
+			start = tmp
+		} else {
+			end = tmp
+		}
+		if end-start <= 1 {
+			cuOffset = cunits[start]
+			break
+		}
+	}
+	return cuOffset
+}
+func (d *Data) CuOffsetForOffset(offset Offset) Offset {
+	return d.cuOffsetForOffset(offset, nil)
+}
+func (d *Data) CuFilesForOffset(offset Offset) (*Entry, []*LineFile, error) {
+	r := d.Reader()
+	cuOffset := d.cuOffsetForOffset(offset, r)
+	r.Seek(cuOffset)
+
+	cu, err := r.Next()
+	if err != nil {
+		return nil, nil, fmt.Errorf("error reading compile unit: %v", err)
+	}
+	lr, err := d.LineReader(cu)
+	if err != nil {
+		return nil, nil, fmt.Errorf("failed to get line reader for entry: %v", err)
+	}
+	return cu, lr.Files(), nil
 }
 
 // baseAddressForEntry returns the initial base address to be used when
