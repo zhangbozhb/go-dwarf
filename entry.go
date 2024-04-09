@@ -1106,11 +1106,16 @@ func (d *Data) FilesForEntry(e *Entry) ([]*LineFile, error) {
 	r := d.Reader()
 
 	if len(d.cunits) == 0 {
+		var cunits []Offset
 		for e, _ := r.Next(); e != nil; e, _ = r.Next() {
 			if e.Tag == TagCompileUnit {
-				d.cunits = append(d.cunits, e.Offset)
+				cunits = append(cunits, e.Offset)
 			}
 		}
+		sort.SliceStable(cunits, func(i, j int) bool {
+			return cunits[i] < cunits[j]
+		})
+		d.cunits = cunits
 	}
 
 	for i := 0; i < len(d.cunits); i++ {
@@ -1157,24 +1162,22 @@ func (d *Data) BuildCompileUnits() {
 
 func (d *Data) cuOffsetForOffset(offset Offset) Offset {
 	d.BuildCompileUnits()
-	// 二分查找
-	cunits := d.cunits
-	var cuOffset Offset
-	count := len(cunits)
-	start, end := 0, count-1
-	for start <= end {
-		tmp := (start + end) / 2
-		if cunits[tmp] <= offset {
-			start = tmp
+	arr := d.cunits
+	low, high := 0, len(arr)-1
+	var lastNotGreaterIdx int = -1
+	for low <= high {
+		mid := low + (high-low)/2
+		if arr[mid] <= offset {
+			lastNotGreaterIdx = mid
+			low = mid + 1
 		} else {
-			end = tmp
-		}
-		if end-start <= 1 {
-			cuOffset = cunits[start]
-			break
+			high = mid - 1
 		}
 	}
-	return cuOffset
+	if lastNotGreaterIdx >= 0 {
+		return arr[lastNotGreaterIdx]
+	}
+	return 0
 }
 func (d *Data) CuOffsetForOffset(offset Offset) Offset {
 	return d.cuOffsetForOffset(offset)

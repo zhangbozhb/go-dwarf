@@ -11,6 +11,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+	"sort"
 )
 
 // Data represents the DWARF debugging information
@@ -101,6 +102,10 @@ func New(abbrev, aranges, frame, info, line, pubnames, ranges, str []byte) (*Dat
 	if err != nil {
 		return nil, err
 	}
+	// sort to fast seek
+	sort.Slice(u, func(i, j int) bool {
+		return u[i].off < u[j].off
+	})
 	d.unit = u
 	return d, nil
 }

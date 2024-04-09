@@ -121,7 +121,7 @@ func (d *Data) parseUnits() ([]unit, error) {
 
 // offsetToUnit returns the index of the unit containing offset off.
 // It returns -1 if no unit contains this offset.
-func (d *Data) offsetToUnit(off Offset) int {
+func (d *Data) offsetToUnitPre(off Offset) int {
 	// Find the unit after off
 	next := sort.Search(len(d.unit), func(i int) bool {
 		return d.unit[i].off > off
@@ -134,4 +134,21 @@ func (d *Data) offsetToUnit(off Offset) int {
 		return next - 1
 	}
 	return -1
+}
+
+// better performance
+func (d *Data) offsetToUnit(off Offset) int {
+	arr := d.unit
+	low, high := 0, len(arr)-1
+	var lastNotGreaterIdx int = -1
+	for low <= high {
+		mid := low + (high-low)/2
+		if arr[mid].off <= off {
+			lastNotGreaterIdx = mid
+			low = mid + 1
+		} else {
+			high = mid - 1
+		}
+	}
+	return lastNotGreaterIdx
 }
