@@ -1138,16 +1138,15 @@ func (d *Data) FilesForEntry(e *Entry) ([]*LineFile, error) {
 	return lr.Files(), nil
 }
 
-func (d *Data) BuildCompileUnit(r *Reader) {
+func (d *Data) GetCompileUnits() []Offset {
+	d.BuildCompileUnits()
+	return d.cunits
+}
+func (d *Data) BuildCompileUnits() {
 	if len(d.cunits) == 0 {
-		if r == nil {
-			r = d.Reader()
-		}
 		var cunits []Offset
-		for e, _ := r.Next(); e != nil; e, _ = r.Next() {
-			if e.Tag == TagCompileUnit {
-				cunits = append(cunits, e.Offset)
-			}
+		for _, u := range d.unit {
+			cunits = append(cunits, u.off)
 		}
 		sort.SliceStable(cunits, func(i, j int) bool {
 			return cunits[i] < cunits[j]
@@ -1156,8 +1155,8 @@ func (d *Data) BuildCompileUnit(r *Reader) {
 	}
 }
 
-func (d *Data) cuOffsetForOffset(offset Offset, r *Reader) Offset {
-	d.BuildCompileUnit(r)
+func (d *Data) cuOffsetForOffset(offset Offset) Offset {
+	d.BuildCompileUnits()
 	// 二分查找
 	cunits := d.cunits
 	var cuOffset Offset
@@ -1178,11 +1177,11 @@ func (d *Data) cuOffsetForOffset(offset Offset, r *Reader) Offset {
 	return cuOffset
 }
 func (d *Data) CuOffsetForOffset(offset Offset) Offset {
-	return d.cuOffsetForOffset(offset, nil)
+	return d.cuOffsetForOffset(offset)
 }
 func (d *Data) CuFilesForOffset(offset Offset) (*Entry, []*LineFile, error) {
 	r := d.Reader()
-	cuOffset := d.cuOffsetForOffset(offset, r)
+	cuOffset := d.cuOffsetForOffset(offset)
 	r.Seek(cuOffset)
 
 	cu, err := r.Next()
