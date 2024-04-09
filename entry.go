@@ -14,7 +14,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"slices"
+	"sort"
 	"strconv"
 )
 
@@ -1149,7 +1149,9 @@ func (d *Data) BuildCompileUnit(r *Reader) {
 				cunits = append(cunits, e.Offset)
 			}
 		}
-		slices.Sort(cunits)
+		sort.SliceStable(cunits, func(i, j int) bool {
+			return cunits[i] < cunits[j]
+		})
 		d.cunits = cunits
 	}
 }
