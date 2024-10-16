@@ -136,6 +136,26 @@ const (
 	AttrDeleted              Attr = 0x8A
 	AttrDefaulted            Attr = 0x8B
 	AttrLoclistsBase         Attr = 0x8C
+
+	// https://chromium.googlesource.com/external/elfutils/+/refs/heads/master/libdw/dwarf.h
+	AttrMipsFde                   Attr = 0x2001
+	AttrMipsLoopBegin             Attr = 0x2002
+	AttrMipsTailLoopBegin         Attr = 0x2003
+	AttrMipsEpilogBBegin          Attr = 0x2004
+	AttrMipsLoopUnrollFactor      Attr = 0x2005
+	AttrMipsSoftwarePipelineDepth Attr = 0x2006
+	AttrMipsLinkageName           Attr = 0x2007
+	AttrMipsStride                Attr = 0x2008
+	AttrMipsAbstractName          Attr = 0x2009
+	AttrMipsCloneOrigin           Attr = 0x200a
+	AttrMipsHasInlines            Attr = 0x200b
+	AttrMipsStrideByte            Attr = 0x200c
+	AttrMipsStrideElem            Attr = 0x200d
+	AttrMipsPtrDopeType           Attr = 0x200e
+	AttrMipsAllocatableDopeType   Attr = 0x200f
+	AttrMipsAssumedShapeDopeType  Attr = 0x2010
+	AttrMipsAssumedSize           Attr = 0x2011
+
 	// GNU extensions
 	AttrSfNames                    Attr = 0x2101
 	AttrSrcInfo                    Attr = 0x2102
