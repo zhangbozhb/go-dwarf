@@ -129,6 +129,23 @@ func _() {
 	_ = x[AttrDeleted-138]
 	_ = x[AttrDefaulted-139]
 	_ = x[AttrLoclistsBase-140]
+	_ = x[AttrMipsFde-8193]
+	_ = x[AttrMipsLoopBegin-8194]
+	_ = x[AttrMipsTailLoopBegin-8195]
+	_ = x[AttrMipsEpilogBBegin-8196]
+	_ = x[AttrMipsLoopUnrollFactor-8197]
+	_ = x[AttrMipsSoftwarePipelineDepth-8198]
+	_ = x[AttrMipsLinkageName-8199]
+	_ = x[AttrMipsStride-8200]
+	_ = x[AttrMipsAbstractName-8201]
+	_ = x[AttrMipsCloneOrigin-8202]
+	_ = x[AttrMipsHasInlines-8203]
+	_ = x[AttrMipsStrideByte-8204]
+	_ = x[AttrMipsStrideElem-8205]
+	_ = x[AttrMipsPtrDopeType-8206]
+	_ = x[AttrMipsAllocatableDopeType-8207]
+	_ = x[AttrMipsAssumedShapeDopeType-8208]
+	_ = x[AttrMipsAssumedSize-8209]
 	_ = x[AttrSfNames-8449]
 	_ = x[AttrSrcInfo-8450]
 	_ = x[AttrMacInfo-8451]
@@ -190,7 +207,7 @@ func _() {
 	_ = x[AttrAppleSDK-16367]
 }
 
-const _Attr_name = "SiblingLocationNameOrderingByteSizeBitOffsetBitSizeStmtListLowpcHighpcLanguageDiscrDiscrValueVisibilityImportStringLengthCommonRefCompDirConstValueContainingTypeDefaultValueInlineIsOptionalLowerBoundProducerPrototypedReturnAddrStartScopeStrideSizeUpperBoundAbstractOriginAccessibilityAddrClassArtificialBaseTypesCallingCountDataMemberLocDeclColumnDeclFileDeclLineDeclarationDiscrListEncodingExternalFrameBaseFriendIdentifierCaseMacroInfoNamelistItemPrioritySegmentSpecificationStaticLinkTypeUseLocationVarParamVirtualityVtableElemLocAllocatedAssociatedDataLocationStrideEntrypcUseUTF8ExtensionRangesTrampolineCallColumnCallFileCallLineDescriptionBinaryScaleDecimalScaleSmallDecimalSignDigitCountPictureStringMutableThreadsScaledExplicitObjectPointerEndianityElementalPureRecursiveSignatureMainSubprogramDataBitOffsetConstExprEnumClassLinkageNameStringLengthBitSizeStringLengthByteSizeRankStrOffsetsBaseAddrBaseRnglistsBaseDwoNameReferenceRvalueReferenceMacrosCallAllCallsCallAllSourceCallsCallAllTailCallsCallReturnPCCallValueCallOriginCallParameterCallPCCallTailCallCallTargetCallTargetClobberedCallDataLocationCallDataValueNoreturnAlignmentExportSymbolsDeletedDefaultedLoclistsBaseSfNamesSrcInfoMacInfoSrcCoordsBodyBeginBodyEndGnuVectorGnuGuardedByGnuPtGuardedByGnuGuardedGnuPtGuardedGnuLocksExcludedGnuExclusiveLocksRequiredGnuSharedLocksRequiredGnuOdrSignatureGnuTemplateNameGnuCallSiteValueGnuCallSiteDataValueGnuCallSiteTargetGnuCallSiteTargetClobberedGnuTailCallGnuAllTailCallSitesGnuAllCallSitesGnuAllSourceCallSitesGnuMacrosGnuDwoNameGnuDwoIdGnuRangesBaseGnuAddrBaseGnuPubnamesGnuPubtypesGnuDiscriminatorGnuLocviewsGnuEntryViewLlvmIncludePathLlvmConfigMacrosLlvmSysrootLlvmTagOffsetLlvmPtrauthKeyLlvmPtrauthAddressDiscriminatedLlvmPtrauthExtraDiscriminatorLlvmApiNotesLlvmPtrauthIsaPointerLlvmPtrauthAuthenticatesNullValuesAppleOptimizedAppleFlagsAppleIsaAppleBlockAppleMajorRuntimeVersionAppleRuntimeClassAppleOmitFramePtrApplePropertyNameApplePropertyGetterApplePropertySetterApplePropertyAttributeAppleObjcCompleteTypeApplePropertyAppleObjcDirectAppleSDK"
+const _Attr_name = "SiblingLocationNameOrderingByteSizeBitOffsetBitSizeStmtListLowpcHighpcLanguageDiscrDiscrValueVisibilityImportStringLengthCommonRefCompDirConstValueContainingTypeDefaultValueInlineIsOptionalLowerBoundProducerPrototypedReturnAddrStartScopeStrideSizeUpperBoundAbstractOriginAccessibilityAddrClassArtificialBaseTypesCallingCountDataMemberLocDeclColumnDeclFileDeclLineDeclarationDiscrListEncodingExternalFrameBaseFriendIdentifierCaseMacroInfoNamelistItemPrioritySegmentSpecificationStaticLinkTypeUseLocationVarParamVirtualityVtableElemLocAllocatedAssociatedDataLocationStrideEntrypcUseUTF8ExtensionRangesTrampolineCallColumnCallFileCallLineDescriptionBinaryScaleDecimalScaleSmallDecimalSignDigitCountPictureStringMutableThreadsScaledExplicitObjectPointerEndianityElementalPureRecursiveSignatureMainSubprogramDataBitOffsetConstExprEnumClassLinkageNameStringLengthBitSizeStringLengthByteSizeRankStrOffsetsBaseAddrBaseRnglistsBaseDwoNameReferenceRvalueReferenceMacrosCallAllCallsCallAllSourceCallsCallAllTailCallsCallReturnPCCallValueCallOriginCallParameterCallPCCallTailCallCallTargetCallTargetClobberedCallDataLocationCallDataValueNoreturnAlignmentExportSymbolsDeletedDefaultedLoclistsBaseMipsFdeMipsLoopBeginMipsTailLoopBeginMipsEpilogBBeginMipsLoopUnrollFactorMipsSoftwarePipelineDepthMipsLinkageNameMipsStrideMipsAbstractNameMipsCloneOriginMipsHasInlinesMipsStrideByteMipsStrideElemMipsPtrDopeTypeMipsAllocatableDopeTypeMipsAssumedShapeDopeTypeMipsAssumedSizeSfNamesSrcInfoMacInfoSrcCoordsBodyBeginBodyEndGnuVectorGnuGuardedByGnuPtGuardedByGnuGuardedGnuPtGuardedGnuLocksExcludedGnuExclusiveLocksRequiredGnuSharedLocksRequiredGnuOdrSignatureGnuTemplateNameGnuCallSiteValueGnuCallSiteDataValueGnuCallSiteTargetGnuCallSiteTargetClobberedGnuTailCallGnuAllTailCallSitesGnuAllCallSitesGnuAllSourceCallSitesGnuMacrosGnuDwoNameGnuDwoIdGnuRangesBaseGnuAddrBaseGnuPubnamesGnuPubtypesGnuDiscriminatorGnuLocviewsGnuEntryViewLlvmIncludePathLlvmConfigMacrosLlvmSysrootLlvmTagOffsetLlvmPtrauthKeyLlvmPtrauthAddressDiscriminatedLlvmPtrauthExtraDiscriminatorLlvmApiNotesLlvmPtrauthIsaPointerLlvmPtrauthAuthenticatesNullValuesAppleOptimizedAppleFlagsAppleIsaAppleBlockAppleMajorRuntimeVersionAppleRuntimeClassAppleOmitFramePtrApplePropertyNameApplePropertyGetterApplePropertySetterApplePropertyAttributeAppleObjcCompleteTypeApplePropertyAppleObjcDirectAppleSDK"
 
 var _Attr_map = map[Attr]string{
 	1:     _Attr_name[0:7],
@@ -314,65 +331,82 @@ var _Attr_map = map[Attr]string{
 	138:   _Attr_name[1155:1162],
 	139:   _Attr_name[1162:1171],
 	140:   _Attr_name[1171:1183],
-	8449:  _Attr_name[1183:1190],
-	8450:  _Attr_name[1190:1197],
-	8451:  _Attr_name[1197:1204],
-	8452:  _Attr_name[1204:1213],
-	8453:  _Attr_name[1213:1222],
-	8454:  _Attr_name[1222:1229],
-	8455:  _Attr_name[1229:1238],
-	8456:  _Attr_name[1238:1250],
-	8457:  _Attr_name[1250:1264],
-	8458:  _Attr_name[1264:1274],
-	8459:  _Attr_name[1274:1286],
-	8460:  _Attr_name[1286:1302],
-	8461:  _Attr_name[1302:1327],
-	8462:  _Attr_name[1327:1349],
-	8463:  _Attr_name[1349:1364],
-	8464:  _Attr_name[1364:1379],
-	8465:  _Attr_name[1379:1395],
-	8466:  _Attr_name[1395:1415],
-	8467:  _Attr_name[1415:1432],
-	8468:  _Attr_name[1432:1458],
-	8469:  _Attr_name[1458:1469],
-	8470:  _Attr_name[1469:1488],
-	8471:  _Attr_name[1488:1503],
-	8472:  _Attr_name[1503:1524],
-	8473:  _Attr_name[1524:1533],
-	8496:  _Attr_name[1533:1543],
-	8497:  _Attr_name[1543:1551],
-	8498:  _Attr_name[1551:1564],
-	8499:  _Attr_name[1564:1575],
-	8500:  _Attr_name[1575:1586],
-	8501:  _Attr_name[1586:1597],
-	8502:  _Attr_name[1597:1613],
-	8503:  _Attr_name[1613:1624],
-	8504:  _Attr_name[1624:1636],
-	15872: _Attr_name[1636:1651],
-	15873: _Attr_name[1651:1667],
-	15874: _Attr_name[1667:1678],
-	15875: _Attr_name[1678:1691],
-	15876: _Attr_name[1691:1705],
-	15877: _Attr_name[1705:1736],
-	15878: _Attr_name[1736:1765],
-	15879: _Attr_name[1765:1777],
-	15880: _Attr_name[1777:1798],
-	15881: _Attr_name[1798:1832],
-	16353: _Attr_name[1832:1846],
-	16354: _Attr_name[1846:1856],
-	16355: _Attr_name[1856:1864],
-	16356: _Attr_name[1864:1874],
-	16357: _Attr_name[1874:1898],
-	16358: _Attr_name[1898:1915],
-	16359: _Attr_name[1915:1932],
-	16360: _Attr_name[1932:1949],
-	16361: _Attr_name[1949:1968],
-	16362: _Attr_name[1968:1987],
-	16363: _Attr_name[1987:2009],
-	16364: _Attr_name[2009:2030],
-	16365: _Attr_name[2030:2043],
-	16366: _Attr_name[2043:2058],
-	16367: _Attr_name[2058:2066],
+	8193:  _Attr_name[1183:1190],
+	8194:  _Attr_name[1190:1203],
+	8195:  _Attr_name[1203:1220],
+	8196:  _Attr_name[1220:1236],
+	8197:  _Attr_name[1236:1256],
+	8198:  _Attr_name[1256:1281],
+	8199:  _Attr_name[1281:1296],
+	8200:  _Attr_name[1296:1306],
+	8201:  _Attr_name[1306:1322],
+	8202:  _Attr_name[1322:1337],
+	8203:  _Attr_name[1337:1351],
+	8204:  _Attr_name[1351:1365],
+	8205:  _Attr_name[1365:1379],
+	8206:  _Attr_name[1379:1394],
+	8207:  _Attr_name[1394:1417],
+	8208:  _Attr_name[1417:1441],
+	8209:  _Attr_name[1441:1456],
+	8449:  _Attr_name[1456:1463],
+	8450:  _Attr_name[1463:1470],
+	8451:  _Attr_name[1470:1477],
+	8452:  _Attr_name[1477:1486],
+	8453:  _Attr_name[1486:1495],
+	8454:  _Attr_name[1495:1502],
+	8455:  _Attr_name[1502:1511],
+	8456:  _Attr_name[1511:1523],
+	8457:  _Attr_name[1523:1537],
+	8458:  _Attr_name[1537:1547],
+	8459:  _Attr_name[1547:1559],
+	8460:  _Attr_name[1559:1575],
+	8461:  _Attr_name[1575:1600],
+	8462:  _Attr_name[1600:1622],
+	8463:  _Attr_name[1622:1637],
+	8464:  _Attr_name[1637:1652],
+	8465:  _Attr_name[1652:1668],
+	8466:  _Attr_name[1668:1688],
+	8467:  _Attr_name[1688:1705],
+	8468:  _Attr_name[1705:1731],
+	8469:  _Attr_name[1731:1742],
+	8470:  _Attr_name[1742:1761],
+	8471:  _Attr_name[1761:1776],
+	8472:  _Attr_name[1776:1797],
+	8473:  _Attr_name[1797:1806],
+	8496:  _Attr_name[1806:1816],
+	8497:  _Attr_name[1816:1824],
+	8498:  _Attr_name[1824:1837],
+	8499:  _Attr_name[1837:1848],
+	8500:  _Attr_name[1848:1859],
+	8501:  _Attr_name[1859:1870],
+	8502:  _Attr_name[1870:1886],
+	8503:  _Attr_name[1886:1897],
+	8504:  _Attr_name[1897:1909],
+	15872: _Attr_name[1909:1924],
+	15873: _Attr_name[1924:1940],
+	15874: _Attr_name[1940:1951],
+	15875: _Attr_name[1951:1964],
+	15876: _Attr_name[1964:1978],
+	15877: _Attr_name[1978:2009],
+	15878: _Attr_name[2009:2038],
+	15879: _Attr_name[2038:2050],
+	15880: _Attr_name[2050:2071],
+	15881: _Attr_name[2071:2105],
+	16353: _Attr_name[2105:2119],
+	16354: _Attr_name[2119:2129],
+	16355: _Attr_name[2129:2137],
+	16356: _Attr_name[2137:2147],
+	16357: _Attr_name[2147:2171],
+	16358: _Attr_name[2171:2188],
+	16359: _Attr_name[2188:2205],
+	16360: _Attr_name[2205:2222],
+	16361: _Attr_name[2222:2241],
+	16362: _Attr_name[2241:2260],
+	16363: _Attr_name[2260:2282],
+	16364: _Attr_name[2282:2303],
+	16365: _Attr_name[2303:2316],
+	16366: _Attr_name[2316:2331],
+	16367: _Attr_name[2331:2339],
 }
 
 func (i Attr) String() string {
